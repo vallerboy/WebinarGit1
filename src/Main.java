@@ -2,11 +2,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
         List<String> names = new ArrayList<>();
         names.addAll(Arrays.asList("oskar", "damian", "Ada", "Kamila", "Tomek", "Dorota"));
+
 
 
         showMe(s -> s.toLowerCase(), "HEJO!!");
@@ -23,16 +26,11 @@ public class Main {
 
 
         // == klasa anonimowa z przesłonięciem metody
-        showMe(new Nameator() {
-            @Override
-            public String getName(String s) {
-                return s.concat(" a to jest z klasy anonimowej");
-            }
-        }, "hejOasd!!");
+
     }
 
 
-    public static void showMe(Nameator nameator, String name){
-        System.out.println(nameator.getName(name));
+    public static void showMe(Function<String, String> nameator, String name){
+        System.out.println(nameator.apply(name));
     }
 }
