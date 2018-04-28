@@ -10,7 +10,7 @@ public class Main {
         List<String> names = new ArrayList<>();
         names.addAll(Arrays.asList("oskar", "damian", "Ada", "Kamila", "Tomek", "Dorota"));
 
-
+        //druga zmiana!
 
         showMe(s -> s.toLowerCase(), "HEJO!!");
         showMe(s -> s.toUpperCase(), "hejO!!");
